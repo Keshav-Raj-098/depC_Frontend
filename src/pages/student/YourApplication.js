@@ -67,8 +67,8 @@ const YourApplication = () => {
                                 <td className="py-2 px-4 border-b">{application.cgpa}</td>
                             </tr>
                             <tr>
-                                <td className="py-2 px-4 border-b font-semibold">Hostel:</td>
-                                <td className="py-2 px-4 border-b">{application.hostel}</td>
+                                <td className="py-2 px-4 border-b font-semibold">Branch:</td>
+                                <td className="py-2 px-4 border-b">{application.branch}</td>
                             </tr>
                             <tr>
                                 <td className="py-2 px-4 border-b font-semibold">Affidavit:</td>

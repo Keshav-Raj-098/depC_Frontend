@@ -10,7 +10,7 @@ const Mainpage = () => {
 
       <span>Admin page not created</span>
      
-      <MoveButton name={"Admin"} handleclick={()=>{navigate("/register")}}/>
+      <MoveButton name={"Admin"} handleclick={()=>{navigate("/admin/home")}}/>
       <MoveButton name={"student"} handleclick={()=>{navigate("/register")}}/>
       
     </div>
