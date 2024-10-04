@@ -1,70 +1,42 @@
-import { useState,useEffect, } from 'react';
-import { Routes, Route, Outlet,useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import MainPage from './pages/Mainpage';
-import Signin_Signup from './pages/Signin_Signup';
+import SigninSignup from './pages/Signin_Signup';
 import Application from './pages/student/Application';
 import Home from './pages/student/Home';
 import Student from './pages/student/index';
 import YourApplication from './pages/student/YourApplication';
+import Admin from "./pages/admin/index"
+import AllApplicant from  "./pages/admin/allApplicant"
+import AdminHome from  "./pages/admin/Home"
+import Branch from './pages/admin/AllBranch';
 
 function App() {
 
-  const navigate = useNavigate();
-
-
-
-
-  // useEffect(() => {
-  //   const checkAuth = async () => {
-  //     try {
-  //       const url = `${process.env.REACT_APP_BACKEND_URL}/student/`;
-  //       const response = await fetch(url, {
-  //         method: 'GET',
-  //         credentials: 'include',  // Sends the cookies automatically
-  //       });
   
-  //      // Log the entire response object
-  //       const data = await response.json()
-      
-  //       // Check the response status
-  //       if (data.statusCode === 200) {  
-  //         const userData =  data.data;  
-  //         console.log(userData);
-          
-  //         setStudent(userData);  // Set authenticated user info in the frontend state
-  //       console.log(student);
-        
-  //       } else {
-          
-  //         setStudent(null);
-  //         navigate("/");
-  //       }
-  //     } catch (error) {
-  //       // Handle error case (e.g., network error)
-  //       console.error("Error checking authentication:", error);
-  //       setStudent(null);
-  //       navigate("/");
-  //     }
-  //   };
-  
-  //   checkAuth();
-  // }, []);
 
-  
+
 
   return (
-      <Routes>
-        {/* Root route */}
-        <Route path='/' element={<MainPage/>} />
+    <Routes>
+      {/* Root route */}
+      <Route path='/' element={<MainPage />} />
 
-        {/* Nested routes under /student */}
-          <Route path='register' element={<Signin_Signup/>} />
-        <Route path='student' element={<Student/>}>
-          <Route path='home' element={<Home/> } />
-          <Route path='application' element={<YourApplication/> } />
-          <Route path='apply' element={<Application />} />
-        </Route>
-      </Routes>
+      {/* Student */}
+      <Route path='register' element={<SigninSignup />} />
+      <Route path='student' element={<Student />}>
+        <Route path='home' element={<Home />} />
+        <Route path='application' element={<YourApplication />} />
+        <Route path='apply' element={<Application />} />
+      </Route>
+
+
+      {/* Admin */}
+      <Route path='admin' element={<Admin />}>
+        <Route path='home' element={<AdminHome />} />
+        <Route path='branch' element={<Branch />} />
+        <Route path='applicants' element={<AllApplicant />} />
+      </Route>
+    </Routes>
 
   );
 }

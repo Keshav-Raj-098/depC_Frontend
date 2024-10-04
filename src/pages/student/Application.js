@@ -5,20 +5,31 @@ import { useStudent } from '../../context/studentContext';
 
 
 const Application = () => {
-
+  
   const navigate = useNavigate()
+
+  const branches = [
+    "Computer Science and Engineering",
+    "Electrical Engineering",
+    "Mechanical Engineering",
+    "Civil Engineering",
+    "Chemical Engineering",
+    "Biochemical Engineering and Biotechnology",
+    "Physics Engineering",
+    "Mathematics and Computing",
+    "Textile Engineering",
+    "Engineering Physics",
+    "Production and Industrial Engineering",
+    "Energy Studies",
+    "Materials Science and Engineering",
+    "Environmental Engineering"
+];
+
   const {student,setStudent} = useStudent()
-
-  const hostels = [
-    "Aravali", "Girnar", "Himadri", "Jwalamukhi", "Kailash", "Karakoram",
-    "Kumaon", "Nilgiri", "Satpura", "Shivalik", "Udaigiri", "Vindhyachal",
-    "Zanskar", "Vindyachal",
-  ];
-
   const [fullname, setFullname] = useState("")
   const [entryNo, setEntryNo] = useState("")
   const [cgpa, setCgpa] = useState("")
-  const [hostel, setHostel] = useState("None")
+  const [branch, setBranch] = useState("None")
   const [list, setList] = useState(Array(5).fill("")); // Array of 5 dropdowns
   const [noOfOptions, setNoOfOptions] = useState(5);
 
@@ -32,7 +43,7 @@ const Application = () => {
       name: fullname,           // Change `fullname` to `name`
       entryNumber: entryNo,
       cgpa: cgpa,
-      hostel: hostel,
+      branch: branch,
       list: list
     };
   
@@ -91,19 +102,19 @@ const Application = () => {
         <h1 className='text-2xl font-bold text-gray-800 mb-6'>Application Details</h1>
 
         <Line title={"Full Name"} setFunction={setFullname} />
-        <Line title={"Entry Form"} setFunction={setEntryNo} />
+        <Line title={"Entry Number"} setFunction={setEntryNo} />
         <Line title={"CGPA"} setFunction={setCgpa} />
 
         <div className='flex flex-row items-center gap-4 w-full'>
-          <span className='text-gray-700 font-medium'>Hostel:</span>
+          <span className='text-gray-700 font-medium'>Branch:</span>
           <div className='border-[1px] border-gray-300 rounded-lg p-2'>
             <select
-              value={hostel}
-              onChange={(e) => { setHostel(e.target.value) }}
+              value={branch}
+              onChange={(e) => { setBranch(e.target.value) }}
               className='outline-none bg-transparent'
             >
               <option value="" hidden>Select an option</option>
-              {hostels.map((option, index) => (
+              {branches.map((option, index) => (
                 <option key={index} value={option}>
                   {option}
                 </option>
