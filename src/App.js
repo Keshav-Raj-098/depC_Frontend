@@ -9,6 +9,7 @@ import Admin from "./pages/admin/index"
 import AllApplicant from  "./pages/admin/allApplicant"
 import AdminHome from  "./pages/admin/Home"
 import Branch from './pages/admin/AllBranch';
+import BranchChange from './pages/admin/branchChange';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
         <Route path='home' element={<AdminHome />} />
         <Route path='branch' element={<Branch />} />
         <Route path='applicants' element={<AllApplicant />} />
+        <Route path='change' element={<BranchChange />} />
       </Route>
     </Routes>
 

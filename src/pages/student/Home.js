@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useStudent } from '../../context/studentContext';
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
       setName(student?.username);
       setEmail(student?.email);
     }
-  }, [student]); // Added student to the dependency array
+  }, [student,navigate]); // Added student to the dependency array
 
   return (
     <div className='h-[85vh] flex flex-col gap-3 justify-center items-center'>
