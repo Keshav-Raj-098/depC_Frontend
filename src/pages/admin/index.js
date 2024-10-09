@@ -16,6 +16,9 @@ const Index = () => {
                 onClick={()=>{navigate("/")}}
                 >Log Out</button>
                 <button className='bg-blue-500 py-2 px-5 rounded-lg text-white'
+                onClick={()=>{navigate("change")}}
+                >Change</button>
+                <button className='bg-blue-500 py-2 px-5 rounded-lg text-white'
                 onClick={()=>{navigate("branch")}}
                 >Branch</button>
                 <button className='bg-blue-500 py-2 px-5 rounded-lg text-white'
